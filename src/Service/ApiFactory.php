@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace WernerDweight\SpotifyApiClient\Service;
+namespace WernerDweight\SpotifyApiClientBundle\Service;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use WernerDweight\RA\Exception\RAException;
 use WernerDweight\RA\RA;
-use WernerDweight\SpotifyApiClient\Service\Client\ClientInterface;
+use WernerDweight\SpotifyApiClient\Client\ClientInterface;
 use WernerDweight\SpotifyApiClientBundle\Exception\ApiFactoryException;
 
 /**
@@ -37,14 +37,15 @@ class ApiFactory
     /**
      * @param string $clientType
      * @return ClientInterface
+     * @throws ApiFactoryException
      * @throws RAException
      */
     public function get(string $clientType): ClientInterface
     {
         if ($this->clients->hasKey($clientType) !== true) {
-            throw ApiFactoryException::create(
+            throw new ApiFactoryException(
                 ApiFactoryException::INVALID_CLIENT_TYPE,
-                [$clientType]
+                $clientType
             );
         }
         /** @var ClientInterface $client */

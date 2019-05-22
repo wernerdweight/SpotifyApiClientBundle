@@ -5,15 +5,15 @@ services:
         public: false
 
     WernerDweight\SpotifyApiClientBundle\:
-        resource: '../src/*'
-        exclude: '../src/{DependencyInjection,Exception}'
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Exception,SpotifyApiClientBundle.php}'
 
     WernerDweight\SpotifyApiClient\Client\:
-        resource: '../../spotify-api-client/src/Client/*'
-        exclude: '../../spotify-api-client/src/Client/Abstract*'
+        resource: '../../../../spotify-api-client/src/Client/*'
+        exclude: '../../../../spotify-api-client/src/Client/Abstract*'
         tags:
             - { name: 'spotify_api_client.client' }
 
     WernerDweight\SpotifyApiClientBundle\Service\ApiFactory:
         arguments:
-            $enhancers: !tagged nisi.spotify_api_client.client
+            $clients: !tagged spotify_api_client.client

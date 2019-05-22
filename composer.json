@@ -19,11 +19,13 @@
     "require": {
         "php": ">=7.2.0",
         "symfony/framework-bundle": "^4.0",
-        "wernerdweight/spotify-api-client": "dev-master",
-        "wernerdweight/ra": "^0.3"
+        "wernerdweight/spotify-api-client": "^0.1",
+        "wernerdweight/ra": "^0.3",
+        "thecodingmachine/safe": "^0.1.13"
     },
     "require-dev": {
-        "wernerdweight/cs": "^1.2.1"
+        "wernerdweight/cs": "^1.2.1",
+        "thecodingmachine/phpstan-safe-rule": "^0.1.2"
     },
     "suggest": {},
     "autoload": {

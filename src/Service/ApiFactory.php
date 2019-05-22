@@ -19,6 +19,7 @@ class ApiFactory
 
     /**
      * ApiFactory constructor.
+     *
      * @param RewindableGenerator $clients
      */
     public function __construct(RewindableGenerator $clients)
@@ -36,13 +37,15 @@ class ApiFactory
 
     /**
      * @param string $clientType
+     *
      * @return ClientInterface
+     *
      * @throws ApiFactoryException
      * @throws RAException
      */
     public function get(string $clientType): ClientInterface
     {
-        if ($this->clients->hasKey($clientType) !== true) {
+        if (true !== $this->clients->hasKey($clientType)) {
             throw new ApiFactoryException(
                 ApiFactoryException::INVALID_CLIENT_TYPE,
                 $clientType

@@ -1,0 +1,54 @@
+{
+    "name": "wernerdweight/spotify-api-client-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle wrapper for wernerdweight/spotify-api-client.",
+    "keywords": [
+        "spotify",
+        "api",
+        "client",
+        "bundle"
+    ],
+    "homepage": "https://github.com/wernerdweight/SpotifyApiClientBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Werner Dweight Solutions",
+            "email": "info@wds.blue"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "symfony/framework-bundle": "^4.0",
+        "wernerdweight/spotify-api-client": "dev-master",
+        "wernerdweight/ra": "^0.3"
+    },
+    "require-dev": {
+        "wernerdweight/cs": "^1.2.1"
+    },
+    "suggest": {},
+    "autoload": {
+        "psr-4": {
+            "WernerDweight\\SpotifyApiClientBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WernerDweight\\SpotifyApiClientBundle\\Tests\\": "Tests"
+        }
+    },
+    "scripts": {
+        "fix": "ecs check ./src/ ./tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml --fix",
+        "phpstan": "phpstan analyse ./src/ ./tests/ --level max",
+        "phpmd": "phpmd ./src/ text vendor/wernerdweight/cs/WernerDweight/CS/phpmd.xml",
+        "ecs": "ecs check ./src/ ./tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml",
+        "ecs-fix": "ecs check ./src/ ./tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml --fix",
+        "phpunit": "phpunit",
+        "victor": "victor"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "^4.2"
+        }
+    }
+}

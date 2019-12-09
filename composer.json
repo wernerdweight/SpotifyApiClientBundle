@@ -19,8 +19,8 @@
     "require": {
         "php": ">=7.2.0",
         "symfony/framework-bundle": "^4.0",
-        "wernerdweight/spotify-api-client": "^0.1",
-        "wernerdweight/ra": "^0.3",
+        "wernerdweight/spotify-api-client": "^0.2",
+        "wernerdweight/ra": "^1.0",
         "thecodingmachine/safe": "^0.1.13"
     },
     "require-dev": {
